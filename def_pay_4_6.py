@@ -1,16 +1,19 @@
+x = input("Enter Hours: ")
+y = input("Enter Rate: ")
+
+
 def computepay(hours, rate):
-    if hours > 40:
-        ahrs = hours - 40
-        arate = ahrs * rate * 1.5
-        lpay = (hours - ahrs) * rate + arate
-    else:
-        lpay = hours * rate
-    return lpay
+    hours = float(x)
+    rate = float(y)
+
+    if hours <= 40:
+        return hours * rate
+    elif hours > 40:
+        over_hours = hours - 40
+        over_rate = over_hours * 1.5 * rate
+        pay = (hours - over_hours) * rate + over_rate
+        return pay
 
 
-hours = float(input('Enter hours: '))
-rate = float(input('Enter rate: '))
-
-p = computepay(hours, rate)
-print('Pay', p)
+print(computepay(x, y))
 
