@@ -17,3 +17,20 @@ for line in read:
     num = line[start_pos+2:5]
     extracted = float(num)
 print('done')
+--------------------------------------------
+fhand = open('mbox.txt')
+count = 0
+total = 0
+for line in fhand:
+    words = line.split()
+    if len(words) != 2:
+        continue
+    print('****len words: ', len(words))
+    if words[0] != 'X-DSPAM-Confidence:':
+        continue
+    print('*********dspam: ', words)
+#     conf = float(words[1])
+#     count = count + 1
+#     total = total + conf
+# average = total / count
+# print('Average spam confidence:', average)
