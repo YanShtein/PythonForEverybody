@@ -5,19 +5,20 @@
 # When you reach the end of the file, print out the average spam confidence.
 
 file = open('mbox.txt')
-read = file.read()
+# read = file.read()                            Unnesesery, we don't have to read the whole file into memory if we inted to go through it line by line
 count = 0
-for line in read:
+for line in file:                               #changed read directly to file
     line = line.rstrip()
-    if 'X-DSPAM-Confidence: 0.8475' in read:
-        continue
+    if 'X-DSPAM-Confidence:' in line:           # changed ...in (read/file) to line because we are only interested in the curent itteration's line
+#         continue                              - comented out - The above if-statmen checks wheather the substring we are interested in is in the current line 
+#                                               if we continue(to the next line) we skip the work we should do on the target line we just found
     count = count + 1
     print(line, count)
-    start_pos = float(line.find(':'))
-    num = line[start_pos+2:5]
+    start_pos = line.find(':')                  # Removed the float() cast because we need the index of ':' as an integer for the next step
+    num = line[start_pos+2:]                    # Removed the 5, you ment to go from start_pos+2 to the end of the line the syntacs for this is string[start:[end]]
     extracted = float(num)
-print('done')
---------------------------------------------
+print('done, count is: ', count)                # aded the count to the last print statment
+# -------------------------------------------- comented this out - *.py files you upload to github shuld be runnable 
 fhand = open('mbox.txt')
 count = 0
 total = 0
