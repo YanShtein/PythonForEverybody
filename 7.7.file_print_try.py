@@ -6,7 +6,7 @@ except:
     print('File: "', file_name, '" , cannot be opened.')
     exit()
 count = 0
-# For every line, if it start with the string, count and continue the iteration.
+# For every line, if it start with the string count.
 for line in file_read:
     if line.startswith('From:'):
         count = count + 1       # count the lines in each iteration with the "string"
