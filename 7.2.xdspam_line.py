@@ -10,9 +10,9 @@ count = 0
 total = 0
 for line in file:
     word = line.split()         # uses whitespaces to split the words.
-    if len(word) != 2:          # if the length of the words in line is not equal to 2, continue the iteration above, 
-        continue                # else, continue to the next if statement.
-    if word[0] != 'X-DSPAM-Confidence:':        # if the first word isnt equal to the string, perform the above. else, perform next statement.
+    if len(word) != 2:          # if the length of the words in line is not equal to 2, continue to the next iteration, 
+        continue                # else go to the next if statement.
+    if word[0] != 'X-DSPAM-Confidence:':        # if the first word isnt equal to the string, continue to the next iteration. else, perform next statement.
         continue
     number = float(word[1])         # number equals to the second word, the 0.00000 string. 
     count = count + 1
