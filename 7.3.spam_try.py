@@ -1,3 +1,7 @@
+# Exercise 3: Modify the program that prompts the user for the file name so that it prints a funny message 
+# when the user types in the exact file name “na na booboo”. 
+# The program should behave normally for all other files which exist and don’t exist.
+
 x = input('Enter file name: ')
 if x == 'na na booboo':
     print('NA NA BOO BOO TO YOU - You have been punkd!')
