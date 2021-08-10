@@ -6,9 +6,8 @@ except:
     print('File: "', file_name, '" , cannot be opened.')
     exit()
 count = 0
-# For every line, if it start with the string, count and continue the iteration.
 for line in file_read:
-    if line.startswith('From:'):
-        count = count + 1       # count the lines in each iteration with the "string"
+    if line.startswith('From:'):            # go over the file, and count each line that starts with the string.
+        count = count + 1
 print("There were", count, 'subject lines in', file_name)
 
