@@ -4,33 +4,18 @@
 # Count these lines and then compute the total of the spam confidence values from these lines. 
 # When you reach the end of the file, print out the average spam confidence.
 
-file = open('mbox.txt')
-read = file.read()
-count = 0
-for line in read:
-    line = line.rstrip()
-    if 'X-DSPAM-Confidence: 0.8475' in read:
-        continue
-    count = count + 1
-    print(line, count)
-    start_pos = float(line.find(':'))
-    num = line[start_pos+2:5]
-    extracted = float(num)
-print('done')
---------------------------------------------
-fhand = open('mbox.txt')
+x = input('Enter file name: ')
+file = open(x)
 count = 0
 total = 0
-for line in fhand:
-    words = line.split()
-    if len(words) != 2:
+for line in file:
+    word = line.split()         # uses whitespaces to split the words.
+    if len(word) != 2:          # if the length of the words in line is not equal to 2, continue the iteration above, 
+        continue                # else, continue to the next if statement.
+    if word[0] != 'X-DSPAM-Confidence:':        # if the first word isnt equal to the string, perform the above. else, perform next statement.
         continue
-    print('****len words: ', len(words))
-    if words[0] != 'X-DSPAM-Confidence:':
-        continue
-    print('*********dspam: ', words)
-#     conf = float(words[1])
-#     count = count + 1
-#     total = total + conf
-# average = total / count
-# print('Average spam confidence:', average)
+    number = float(word[1])         # number equals to the second word, the 0.00000 string. 
+    count = count + 1
+    total = total + number
+average = total/count
+print('Average of spam confidence is: ', average)
