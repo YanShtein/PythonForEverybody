@@ -12,10 +12,10 @@ def middle(lst):              # show all elements except first and last.
     return first
 
 
-list1 = [10, 20, 30, 40]      # prints None.
+list1 = [10, 20, 30, 40]      # returns None.
 a = chop(list1)
 print(a)
 
-list2 = [50, 60, 70, 80]      # prints all but the first and last element.
+list2 = [50, 60, 70, 80]      # returns all but the first and last element.
 b = middle(list2)
 print(b)
