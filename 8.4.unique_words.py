@@ -15,8 +15,7 @@
 # Who is already sick and pale with grief
 
 file = open('romeo.txt')
-unique_words = ['Juliet', 'yonder', 'east ', 'sun', 'moon', 'grief', 'pale']
-print(unique_words[:])
+unique_words = []
 for line in file:
     words = line.split()
     for word in words:
