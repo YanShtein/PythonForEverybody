@@ -10,7 +10,8 @@
 
 # https://www.py4e.com/code3/mbox.txt
 
-file = open('mbox.txt.txt')
+x = input("Enter file name: ")
+file = open(x)
 count = 0
 for line in file:
     if not line.startswith('From'):
