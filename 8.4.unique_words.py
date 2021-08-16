@@ -24,4 +24,3 @@ for line in file:
         unique_words.append(word)
         unique_words.sort()
 print(unique_words)
-print('finished')
