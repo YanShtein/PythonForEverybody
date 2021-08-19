@@ -6,16 +6,12 @@
 
 file = open('words.txt')
 counts = dict()
-count = 0
 for line in file:
     words = line.split()
     for word in words:
         # set the count of the name for that particular name,
         # get the current count of the name or 0, and add 1 to it.
-        count += 1
-        if word in counts:
-            continue
-        counts[word] = count
+        counts[word] = counts.get(word, 0) + 1
 print(counts.keys())
 x = input("Enter a word from file: ")
 if x in counts:
