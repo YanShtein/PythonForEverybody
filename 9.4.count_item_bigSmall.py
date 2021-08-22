@@ -3,7 +3,12 @@
 # loop (see Chapter 5: Maximum and minimum loops) to find who has
 # the most messages and print how many messages the person has.
 
-file = open('test.txt')
+x = input("Enter a file name: ")
+try:
+    file = open(x)
+except:
+    print("Enter a valid file name")
+    exit()
 count = dict()
 for line in file:
     line = line.strip()
