@@ -4,6 +4,8 @@
 # the most messages and print how many messages the person has.
 
 x = input("Enter a file name: ")
+if len(x) < 1:
+    x = 'mbox-short.txt'        # for easier access, if pressing Enter, it will default to the file name 'mbox-short.txt'.
 try:
     file = open(x)
 except:
