@@ -73,3 +73,5 @@ for entry in all_dict:
                 (name, album_id, length, rating, count))
 
     conn.commit()
+
+# SELECT Track.title, Album.title, Artist.name FROM Track JOIN Album JOIN Artist ON Track.album_id = album.id AND Album.artist_id = Artist.id
