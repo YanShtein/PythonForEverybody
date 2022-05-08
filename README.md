@@ -1,2 +1,2 @@
-# Python-for-Everybody
-Here I will post Python exercises.
+# Python for Everybody from Coursera online courses site.
+Python exercises taught by Dr. Charles Severance.
